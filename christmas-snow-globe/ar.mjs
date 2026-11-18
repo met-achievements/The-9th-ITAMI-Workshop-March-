@@ -63,6 +63,7 @@ async function loadPhoto() {
     start.hidden = false;
     hiroLink.hidden = !usesKeychain;
     document.getElementById('hiro-help').hidden = usesKeychain;
+    if (usesKeychain) startCamera();
   } catch (cause) {
     message.textContent = '写真を読み込めませんでした。';
     error.textContent = cause.message;
@@ -101,7 +102,7 @@ function showCameraError(text) {
 }
 
 function cameraError() {
-  showCameraError('カメラを起動できませんでした。ブラウザのカメラ許可を確認してください。');
+  showCameraError('カメラを起動できませんでした。ブラウザのカメラ許可を確認し、「カメラで見る」で再試行してください。');
 }
 
 function cameraReady(event) {
@@ -173,7 +174,7 @@ function registerSnow(AFRAME) {
 }
 
 async function startCamera() {
-  if (!photo || photo.state === 'pending' || start.disabled) return;
+  if (leaving || !photo || photo.state === 'pending' || start.disabled) return;
   start.disabled = true;
   start.textContent = 'カメラを準備しています…';
   error.hidden = true;
