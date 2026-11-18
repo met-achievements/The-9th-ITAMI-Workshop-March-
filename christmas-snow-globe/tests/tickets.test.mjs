@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { webcrypto } from 'node:crypto';
 import { createTicket,ticketUrl,parseTicket,encryptPhoto,decryptPhoto,fromBase64Url,toBase64Url } from '../tickets.mjs';
 globalThis.crypto ??= webcrypto;
-const base='https://met-achievements.github.io/The-8th-ITAMI-Workshop-March-/christmas-snow-globe/';
+const base='https://met-achievements.github.io/The-9th-ITAMI-Workshop-March-/christmas-snow-globe/';
 test('preprinted URLs retain ID, number, and secret through viewer/admin/AR links',()=>{
   const ticket=createTicket(12),url=ticketUrl(ticket,base);
   assert.deepEqual(parseTicket(url),ticket);

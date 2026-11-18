@@ -10,7 +10,7 @@
 - `admin.html`：事前QR発行、A4印刷、写真登録ファイルの作成。
 - `marker.html`：ARマーカーの表示・印刷。
 
-公開URL：`https://met-achievements.github.io/The-8th-ITAMI-Workshop-March-/christmas-snow-globe/`
+公開URL：`https://met-achievements.github.io/The-9th-ITAMI-Workshop-March-/christmas-snow-globe/`
 
 ## 事前準備
 
